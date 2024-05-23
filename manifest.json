@@ -1,29 +1,65 @@
 {
-    "manifest_version": 3,
-    "name": "LinkedInHelper",
-    "version": "1.0",
-    "description": "A Chrome extension for Linkedin.",
-    "content_scripts": [
-      {
-        "matches": ["https://www.linkedin.com/*"],
-        "js": ["jquery.min.js", "./main.js"]
-      }
-    ],
-    "icons": {
-      "128": "logo-16.png"
-    },
-    "browser_action": {
-      "default_icon": "logo-16.png",
-      "default_popup": "/popup/popup.html",
-      "default_title": "Click me!"
-    },
-    "permissions": [
-      "storage"
-    ],
-    "web_accessible_resources": [
-      {
-        "resources": ["icon128.png"],
-        "matches": ["https://www.linkedin.com/*"]
-      }
-    ]
-  }
+  "manifest_version": 3,
+  "name": "LinkedInHelper",
+  "version": "1.0",
+  "description": "A Chrome extension for Linkedin.",
+  "icons": {
+    "128": "logo-16.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["jquery.min.js", "./main.js"],
+      "css": ["index.css"]
+    }
+  ],
+  "action": {
+    "default_icon": "logo-16.png",
+    "default_popup": "/popup/popup.html",
+    "default_title": "Click me!"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';",
+    "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval'; child-src 'self';"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icon128.png"],
+      "matches": ["https://www.linkedin.com/*"]
+    }
+  ]
+}
+
+// {
+//     "manifest_version": 3,
+//     "name": "LinkedInHelper",
+//     "version": "1.0",
+//     "description": "A Chrome extension for Linkedin.",
+//     "content_scripts": [
+//       {
+//         "matches": ["https://www.linkedin.com/*"],
+//         "js": ["jquery.min.js", "./main.js"],
+//         "css": ["index.css"]
+//       }
+//     ],
+//     "icons": {
+//       "128": "logo-16.png"
+//     },
+//     "browser_action": {
+//       "default_icon": "logo-16.png",
+//       "default_popup": "/popup/popup.html",
+//       "default_title": "Click me!"
+//     },
+//     "permissions": [
+//       "storage"
+//     ],
+//     "web_accessible_resources": [
+//       {
+//         "resources": ["icon128.png"],
+//         "matches": ["https://www.linkedin.com/*"]
+//       }
+//     ]
+//   }

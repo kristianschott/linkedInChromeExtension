@@ -1,0 +1,24 @@
+.linkedin-style {
+    background-color: #ebf5ff; 
+    color: #0073b1; 
+    padding: 3px 6px; 
+    border-radius: 5px;
+    font-size: 12px; 
+    margin-left: 10px; 
+}
+
+.linkedin-button {
+    background-color: #0073b1;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    outline: none;
+}
+
+.linkedin-button:hover {
+    background-color: #005582;
+}
